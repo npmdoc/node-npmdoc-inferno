@@ -1,0 +1,1291 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/infernojs/inferno#readme"
+
+    >inferno (v3.0.4)</a>
+</h1>
+<h4>An extremely fast, React-like JavaScript library for building modern user interfaces</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inferno">module inferno</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.cloneVNode">
+            function <span class="apidocSignatureSpan">inferno.</span>cloneVNode
+            <span class="apidocSignatureSpan">(vNodeToClone, props)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.createRenderer">
+            function <span class="apidocSignatureSpan">inferno.</span>createRenderer
+            <span class="apidocSignatureSpan">(parentDom)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.createVNode">
+            function <span class="apidocSignatureSpan">inferno.</span>createVNode
+            <span class="apidocSignatureSpan">(flags, type, className, children, props, key, ref, noNormalise)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.findDOMNode">
+            function <span class="apidocSignatureSpan">inferno.</span>findDOMNode
+            <span class="apidocSignatureSpan">(ref)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.getFlagsForElementVnode">
+            function <span class="apidocSignatureSpan">inferno.</span>getFlagsForElementVnode
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.internal_normalize">
+            function <span class="apidocSignatureSpan">inferno.</span>internal_normalize
+            <span class="apidocSignatureSpan">(vNode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.internal_patch">
+            function <span class="apidocSignatureSpan">inferno.</span>internal_patch
+            <span class="apidocSignatureSpan">(lastVNode, nextVNode, parentDom, lifecycle, context, isSVG, isRecycling)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.linkEvent">
+            function <span class="apidocSignatureSpan">inferno.</span>linkEvent
+            <span class="apidocSignatureSpan">(data, event)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.render">
+            function <span class="apidocSignatureSpan">inferno.</span>render
+            <span class="apidocSignatureSpan">(input, parentDom)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">inferno.</span>EMPTY_OBJ</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">inferno.</span>default</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">inferno.</span>internal_DOMNodeMap</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">inferno.</span>internal_isUnitlessNumber</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">inferno.</span>options</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">inferno.</span>NO_OP</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">inferno.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inferno.cloneVNode">module inferno.cloneVNode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.cloneVNode.cloneVNode">
+            function <span class="apidocSignatureSpan">inferno.</span>cloneVNode
+            <span class="apidocSignatureSpan">(vNodeToClone, props)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inferno.createRenderer">module inferno.createRenderer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.createRenderer.createRenderer">
+            function <span class="apidocSignatureSpan">inferno.</span>createRenderer
+            <span class="apidocSignatureSpan">(parentDom)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inferno.createVNode">module inferno.createVNode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.createVNode.createVNode">
+            function <span class="apidocSignatureSpan">inferno.</span>createVNode
+            <span class="apidocSignatureSpan">(flags, type, className, children, props, key, ref, noNormalise)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inferno.findDOMNode">module inferno.findDOMNode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.findDOMNode.findDOMNode">
+            function <span class="apidocSignatureSpan">inferno.</span>findDOMNode
+            <span class="apidocSignatureSpan">(ref)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inferno.getFlagsForElementVnode">module inferno.getFlagsForElementVnode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.getFlagsForElementVnode.getFlagsForElementVnode">
+            function <span class="apidocSignatureSpan">inferno.</span>getFlagsForElementVnode
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inferno.internal_normalize">module inferno.internal_normalize</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.internal_normalize.internal_normalize">
+            function <span class="apidocSignatureSpan">inferno.</span>internal_normalize
+            <span class="apidocSignatureSpan">(vNode)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inferno.internal_patch">module inferno.internal_patch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.internal_patch.internal_patch">
+            function <span class="apidocSignatureSpan">inferno.</span>internal_patch
+            <span class="apidocSignatureSpan">(lastVNode, nextVNode, parentDom, lifecycle, context, isSVG, isRecycling)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inferno.linkEvent">module inferno.linkEvent</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.linkEvent.linkEvent">
+            function <span class="apidocSignatureSpan">inferno.</span>linkEvent
+            <span class="apidocSignatureSpan">(data, event)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inferno.render">module inferno.render</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inferno.render.render">
+            function <span class="apidocSignatureSpan">inferno.</span>render
+            <span class="apidocSignatureSpan">(input, parentDom)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inferno" id="apidoc.module.inferno">module inferno</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.cloneVNode" id="apidoc.element.inferno.cloneVNode">
+        function <span class="apidocSignatureSpan">inferno.</span>cloneVNode
+        <span class="apidocSignatureSpan">(vNodeToClone, props)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cloneVNode(vNodeToClone, props) {
+    var _children = [];
+    for (var _i = 2; _i &#x3c; arguments.length; _i++) {
+        _children[_i - 2] = arguments[_i];
+    }
+    var children = _children;
+    var childrenLen = _children.length;
+    if (childrenLen &#x3e; 0 &#x26;&#x26; !inferno_shared_1.isUndefined(_children[0])) {
+        if (!props) {
+            props = {};
+        }
+        if (childrenLen === 1) {
+            children = _children[0];
+        }
+        if (!inferno_shared_1.isUndefined(children)) {
+            props.children = children;
+        }
+    }
+    var newVNode;
+    if (inferno_shared_1.isArray(vNodeToClone)) {
+        var tmpArray = [];
+        for (var i = 0, len = vNodeToClone.length; i &#x3c; len; i++) {
+            tmpArray.push(directClone(vNodeToClone[i]));
+        }
+        newVNode = tmpArray;
+    }
+    else {
+        var flags = vNodeToClone.flags;
+        var className = vNodeToClone.className || (props &#x26;&#x26; props.className);
+        var key = !inferno_shared_1.isNullOrUndef(vNodeToClone.key) ? vNodeToClone.key : (props ? props.key : null);
+        var ref = vNodeToClone.ref || (props ? props.ref : null);
+        if (flags &#x26; 28 /* Component */) {
+            newVNode = createVNode(flags, vNodeToClone.type, className, null, (!vNodeToClone.props &#x26;&#x26; !props) ? utils_1.EMPTY_OBJ
+ : inferno_shared_1.combineFrom(vNodeToClone.props, props), key, ref, true);
+            var newProps = newVNode.props;
+            if (newProps) {
+                var newChildren = newProps.children;
+                // we need to also clone component children that are in props
+                // as the children may also have been hoisted
+                if (newChildren) {
+                    if (inferno_shared_1.isArray(newChildren)) {
+                        var len = newChildren.length;
+                        if (len &#x3e; 0) {
+                            var tmpArray = [];
+                            for (var i = 0; i &#x3c; len; i++) {
+                                var child = newChildren[i];
+                                if (inferno_shared_1.isStringOrNumber(child)) {
+                                    tmpArray.push(child);
+                                }
+                                else if (!inferno_shared_1.isInvalid(child) &#x26;&#x26; isVNode(child)) {
+                                    tmpArray.push(directClone(child));
+                                }
+                            }
+                            newProps.children = tmpArray;
+                        }
+                    }
+                    else if (isVNode(newChildren)) {
+                        newProps.children = directClone(newChildren);
+                    }
+                }
+            }
+            newVNode.children = null;
+        }
+        else if (flags &#x26; 3970 /* Element */) {
+            children = (props &#x26;&#x26; !inferno_shared_1.isUndefined(props.children)) ? props.children : vNodeToClone.children;
+            newVNode = createVNode(flags, vNodeToClone.type, className, children, (!vNodeToClone.props &#x26;&#x26; !props) ? utils_1.EMPTY_OBJ
+ : inferno_shared_1.combineFrom(vNodeToClone.props, props), key, ref, !children);
+        }
+        else if (flags &#x26; 1 /* Text */) {
+            newVNode = createTextVNode(vNodeToClone.children, key);
+        }
+    }
+    return newVNode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Inferno.render(vNode, container);
+```
+
+The first argument for `createVNode()` is a value from [`VNodeFlags`](https://github.com/infernojs/inferno/tree/master/packages/
+inferno-vnode-flags), this is a numerical value that tells Inferno what the VNode describes on the page.
+
+### `cloneVNode` (package: `inferno`)
+```js
+Inferno.<span class="apidocCodeKeywordSpan">cloneVNode</span>(
+  vNode,
+  [props],
+  [...children]
+)
+```
+
+Clone and return a new Inferno `VNode` using a `VNode` as the starting point. The resulting `VNode` will have the original `VNode
+`&#x27;s props with the new props merged in shallowly. New children will replace existing children. key and ref from the original
+ `VNode` will be preserved.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.createRenderer" id="apidoc.element.inferno.createRenderer">
+        function <span class="apidocSignatureSpan">inferno.</span>createRenderer
+        <span class="apidocSignatureSpan">(parentDom)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createRenderer(parentDom) {
+    return function renderer(lastInput, nextInput) {
+        if (!parentDom) {
+            parentDom = lastInput;
+        }
+        render(nextInput, parentDom);
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+import Inferno from &#x27;inferno&#x27;;
+import { scan, map } from &#x27;most&#x27;;
+
+...
+const model$ = scan(update, 0, actions$);
+const vNodes$ = map(view(actions$), model$);
+const renderer = Inferno.<span class="apidocCodeKeywordSpan">createRenderer</span>();
+const runApp = () =&#x3e; scan(renderer, container, vNodes$).drain();
+
+runApp();
+```
+
+### `createElement` (package: `inferno-create-element`)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.createVNode" id="apidoc.element.inferno.createVNode">
+        function <span class="apidocSignatureSpan">inferno.</span>createVNode
+        <span class="apidocSignatureSpan">(flags, type, className, children, props, key, ref, noNormalise)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createVNode(flags, type, className, children, props, key, ref, noNormalise) {
+    if (flags &#x26; 16 /* ComponentUnknown */) {
+        flags = inferno_shared_1.isStatefulComponent(type) ? 4 /* ComponentClass */ : 8 /* ComponentFunction */;
+    }
+    var vNode = new VNode(children === void 0 ? null : children, className === void 0 ? null : className, flags, key === void 0 ?
+null : key, props === void 0 ? null : props, ref === void 0 ? null : ref, type);
+    if (noNormalise !== true) {
+        normalization_1.normalize(vNode);
+    }
+    if (options_1.options.createVNode !== null) {
+        options_1.options.createVNode(vNode);
+    }
+    return vNode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+);
+```
+
+Functional components are first-class functions where their first argument is the `props` passed through from their parent.
+
+### `createVNode` (package: `inferno`)
+```js
+Inferno.<span class="apidocCodeKeywordSpan">createVNode</span>(
+flags,
+type,
+[props],
+[...children],
+[events],
+[key],
+[ref],
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.findDOMNode" id="apidoc.element.inferno.findDOMNode">
+        function <span class="apidocSignatureSpan">inferno.</span>findDOMNode
+        <span class="apidocSignatureSpan">(ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function findDOMNode(ref) {
+    if (!options_1.options.findDOMNodeEnabled) {
+        if (process.env.NODE_ENV !== &#x27;production&#x27;) {
+            inferno_shared_1.throwError(&#x27;findDOMNode() has been disabled, use Inferno.options.findDOMNodeEnabled = true; enabled
+ findDOMNode(). Warning this can significantly impact performance!&#x27;);
+        }
+        inferno_shared_1.throwError();
+    }
+    var dom = ref &#x26;&#x26; ref.nodeType ? ref : null;
+    return exports.componentToDOMNodeMap.get(ref) || dom;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.getFlagsForElementVnode" id="apidoc.element.inferno.getFlagsForElementVnode">
+        function <span class="apidocSignatureSpan">inferno.</span>getFlagsForElementVnode
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getFlagsForElementVnode(type) {
+    if (type === &#x27;svg&#x27;) {
+        return 128 /* SvgElement */;
+    }
+    else if (type === &#x27;input&#x27;) {
+        return 512 /* InputElement */;
+    }
+    else if (type === &#x27;select&#x27;) {
+        return 2048 /* SelectElement */;
+    }
+    else if (type === &#x27;textarea&#x27;) {
+        return 1024 /* TextareaElement */;
+    }
+    else if (type === &#x27;media&#x27;) {
+        return 256 /* MediaElement */;
+    }
+    return 2 /* HtmlElement */;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.internal_normalize" id="apidoc.element.inferno.internal_normalize">
+        function <span class="apidocSignatureSpan">inferno.</span>internal_normalize
+        <span class="apidocSignatureSpan">(vNode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function normalize(vNode) {
+    var props = vNode.props;
+    var children = vNode.children;
+    // convert a wrongly created type back to element
+    // Primitive node doesn&#x27;t have defaultProps, only Component
+    if (vNode.flags &#x26; 28 /* Component */) {
+        // set default props
+        var type = vNode.type;
+        var defaultProps = type.defaultProps;
+        if (!inferno_shared_1.isNullOrUndef(defaultProps)) {
+            if (!props) {
+                props = vNode.props = defaultProps; // Create new object if only defaultProps given
+            }
+            else {
+                for (var prop in defaultProps) {
+                    if (inferno_shared_1.isUndefined(props[prop])) {
+                        props[prop] = defaultProps[prop];
+                    }
+                }
+            }
+        }
+        if (inferno_shared_1.isString(type)) {
+            vNode.flags = getFlagsForElementVnode(type);
+            if (props &#x26;&#x26; props.children) {
+                vNode.children = props.children;
+                children = props.children;
+            }
+        }
+    }
+    if (props) {
+        normalizeProps(vNode, props, children);
+        if (!inferno_shared_1.isInvalid(props.children)) {
+            props.children = normalizeChildren(props.children);
+        }
+    }
+    if (!inferno_shared_1.isInvalid(children)) {
+        vNode.children = normalizeChildren(children);
+    }
+    if (process.env.NODE_ENV !== &#x27;production&#x27;) {
+        // This code will be stripped out from production CODE
+        // It helps users to track errors in their applications.
+        var verifyKeys = function (vNodes) {
+            var keyValues = vNodes.map(function (vnode) {
+                return vnode.key;
+            });
+            keyValues.some(function (item, idx) {
+                var hasDuplicate = keyValues.indexOf(item) !== idx;
+                if (hasDuplicate) {
+                    inferno_shared_1.warning(&#x27;Inferno normalisation(...): Encountered two children with same key, all keys must
+be unique within its siblings. Duplicated key is:&#x27; + item);
+                }
+                return hasDuplicate;
+            });
+        };
+        if (vNode.children &#x26;&#x26; Array.isArray(vNode.children)) {
+            verifyKeys(vNode.children);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.internal_patch" id="apidoc.element.inferno.internal_patch">
+        function <span class="apidocSignatureSpan">inferno.</span>internal_patch
+        <span class="apidocSignatureSpan">(lastVNode, nextVNode, parentDom, lifecycle, context, isSVG, isRecycling)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function patch(lastVNode, nextVNode, parentDom, lifecycle, context, isSVG, isRecycling) {
+    if (lastVNode !== nextVNode) {
+        var lastFlags = lastVNode.flags;
+        var nextFlags = nextVNode.flags;
+        if (nextFlags &#x26; 28 /* Component */) {
+            if (lastFlags &#x26; 28 /* Component */) {
+                patchComponent(lastVNode, nextVNode, parentDom, lifecycle, context, isSVG, nextFlags &#x26; 4 /* ComponentClass */, isRecycling
+);
+            }
+            else {
+                utils_1.replaceVNode(parentDom, mounting_1.mountComponent(nextVNode, null, lifecycle, context, isSVG, nextFlags &#x26;
+4 /* ComponentClass */), lastVNode, lifecycle, isRecycling);
+            }
+        }
+        else if (nextFlags &#x26; 3970 /* Element */) {
+            if (lastFlags &#x26; 3970 /* Element */) {
+                patchElement(lastVNode, nextVNode, parentDom, lifecycle, context, isSVG, isRecycling);
+            }
+            else {
+                utils_1.replaceVNode(parentDom, mounting_1.mountElement(nextVNode, null, lifecycle, context, isSVG), lastVNode,
+lifecycle, isRecycling);
+            }
+        }
+        else if (nextFlags &#x26; 1 /* Text */) {
+            if (lastFlags &#x26; 1 /* Text */) {
+                patchText(lastVNode, nextVNode);
+            }
+            else {
+                utils_1.replaceVNode(parentDom, mounting_1.mountText(nextVNode, null), lastVNode, lifecycle, isRecycling);
+            }
+        }
+        else if (nextFlags &#x26; 4096 /* Void */) {
+            if (lastFlags &#x26; 4096 /* Void */) {
+                patchVoid(lastVNode, nextVNode);
+            }
+            else {
+                utils_1.replaceVNode(parentDom, mounting_1.mountVoid(nextVNode, null), lastVNode, lifecycle, isRecycling);
+            }
+        }
+        else {
+            // Error case: mount new one replacing old one
+            utils_1.replaceLastChildAndUnmount(lastVNode, nextVNode, parentDom, lifecycle, context, isSVG, isRecycling);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.linkEvent" id="apidoc.element.inferno.linkEvent">
+        function <span class="apidocSignatureSpan">inferno.</span>linkEvent
+        <span class="apidocSignatureSpan">(data, event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function linkEvent(data, event) {
+    return { data: data, event: event };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.render" id="apidoc.element.inferno.render">
+        function <span class="apidocSignatureSpan">inferno.</span>render
+        <span class="apidocSignatureSpan">(input, parentDom)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function render(input, parentDom) {
+    if (documentBody === parentDom) {
+        if (process.env.NODE_ENV !== &#x27;production&#x27;) {
+            inferno_shared_1.throwError(&#x27;you cannot render() to the &#x22;document.body&#x22;. Use an empty element as a container instead
+.&#x27;);
+        }
+        inferno_shared_1.throwError();
+    }
+    if (input === inferno_shared_1.NO_OP) {
+        return;
+    }
+    var root = getRoot(parentDom);
+    if (inferno_shared_1.isNull(root)) {
+        var lifecycle = new inferno_shared_1.Lifecycle();
+        if (!inferno_shared_1.isInvalid(input)) {
+            if (input.dom) {
+                input = VNodes_1.directClone(input);
+            }
+            if (!hydration_1.hydrateRoot(input, parentDom, lifecycle)) {
+                mounting_1.mount(input, parentDom, lifecycle, utils_1.EMPTY_OBJ, false);
+            }
+            root = setRoot(parentDom, input, lifecycle);
+            lifecycle.trigger();
+        }
+    }
+    else {
+        var lifecycle = root.lifecycle;
+        lifecycle.listeners = [];
+        if (inferno_shared_1.isNullOrUndef(input)) {
+            unmounting_1.unmount(root.input, parentDom, lifecycle, false, false);
+            removeRoot(root);
+        }
+        else {
+            if (input.dom) {
+                input = VNodes_1.directClone(input);
+            }
+            patching_1.patch(root.input, input, parentDom, lifecycle, utils_1.EMPTY_OBJ, false, false);
+        }
+        root.input = input;
+        lifecycle.trigger();
+    }
+    if (root) {
+        var rootInput = root.input;
+        if (rootInput &#x26;&#x26; (rootInput.flags &#x26; 28 /* Component */)) {
+            return rootInput.children;
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+In these examples, JSX is used via the [Inferno JSX Babel Plugin](https://github.com/infernojs/babel-plugin-inferno) to provide
+a simple way to express Inferno virtual DOM. You do not need to use JSX, it&#x27;s completely **optional**, you can use [hyperscript
+](https://github.com/infernojs/inferno/tree/master/packages/inferno-hyperscript) or [createElement](https://github.com/infernojs
+/inferno/tree/master/packages/inferno-create-element) (like React does).
+
+```jsx
+import Inferno from &#x27;inferno&#x27;;
+
+const message = &#x22;Hello world&#x22;;
+
+Inferno.<span class="apidocCodeKeywordSpan">render</span>(
+  &#x3c;MyComponent message={ message } /&#x3e;,
+  document.getElementById(&#x22;app&#x22;)
+);
+```
+Furthermore, Inferno also uses ES6 components like React:
+
+```jsx
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inferno.cloneVNode" id="apidoc.module.inferno.cloneVNode">module inferno.cloneVNode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.cloneVNode.cloneVNode" id="apidoc.element.inferno.cloneVNode.cloneVNode">
+        function <span class="apidocSignatureSpan">inferno.</span>cloneVNode
+        <span class="apidocSignatureSpan">(vNodeToClone, props)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cloneVNode(vNodeToClone, props) {
+    var _children = [];
+    for (var _i = 2; _i &#x3c; arguments.length; _i++) {
+        _children[_i - 2] = arguments[_i];
+    }
+    var children = _children;
+    var childrenLen = _children.length;
+    if (childrenLen &#x3e; 0 &#x26;&#x26; !inferno_shared_1.isUndefined(_children[0])) {
+        if (!props) {
+            props = {};
+        }
+        if (childrenLen === 1) {
+            children = _children[0];
+        }
+        if (!inferno_shared_1.isUndefined(children)) {
+            props.children = children;
+        }
+    }
+    var newVNode;
+    if (inferno_shared_1.isArray(vNodeToClone)) {
+        var tmpArray = [];
+        for (var i = 0, len = vNodeToClone.length; i &#x3c; len; i++) {
+            tmpArray.push(directClone(vNodeToClone[i]));
+        }
+        newVNode = tmpArray;
+    }
+    else {
+        var flags = vNodeToClone.flags;
+        var className = vNodeToClone.className || (props &#x26;&#x26; props.className);
+        var key = !inferno_shared_1.isNullOrUndef(vNodeToClone.key) ? vNodeToClone.key : (props ? props.key : null);
+        var ref = vNodeToClone.ref || (props ? props.ref : null);
+        if (flags &#x26; 28 /* Component */) {
+            newVNode = createVNode(flags, vNodeToClone.type, className, null, (!vNodeToClone.props &#x26;&#x26; !props) ? utils_1.EMPTY_OBJ
+ : inferno_shared_1.combineFrom(vNodeToClone.props, props), key, ref, true);
+            var newProps = newVNode.props;
+            if (newProps) {
+                var newChildren = newProps.children;
+                // we need to also clone component children that are in props
+                // as the children may also have been hoisted
+                if (newChildren) {
+                    if (inferno_shared_1.isArray(newChildren)) {
+                        var len = newChildren.length;
+                        if (len &#x3e; 0) {
+                            var tmpArray = [];
+                            for (var i = 0; i &#x3c; len; i++) {
+                                var child = newChildren[i];
+                                if (inferno_shared_1.isStringOrNumber(child)) {
+                                    tmpArray.push(child);
+                                }
+                                else if (!inferno_shared_1.isInvalid(child) &#x26;&#x26; isVNode(child)) {
+                                    tmpArray.push(directClone(child));
+                                }
+                            }
+                            newProps.children = tmpArray;
+                        }
+                    }
+                    else if (isVNode(newChildren)) {
+                        newProps.children = directClone(newChildren);
+                    }
+                }
+            }
+            newVNode.children = null;
+        }
+        else if (flags &#x26; 3970 /* Element */) {
+            children = (props &#x26;&#x26; !inferno_shared_1.isUndefined(props.children)) ? props.children : vNodeToClone.children;
+            newVNode = createVNode(flags, vNodeToClone.type, className, children, (!vNodeToClone.props &#x26;&#x26; !props) ? utils_1.EMPTY_OBJ
+ : inferno_shared_1.combineFrom(vNodeToClone.props, props), key, ref, !children);
+        }
+        else if (flags &#x26; 1 /* Text */) {
+            newVNode = createTextVNode(vNodeToClone.children, key);
+        }
+    }
+    return newVNode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Inferno.render(vNode, container);
+```
+
+The first argument for `createVNode()` is a value from [`VNodeFlags`](https://github.com/infernojs/inferno/tree/master/packages/
+inferno-vnode-flags), this is a numerical value that tells Inferno what the VNode describes on the page.
+
+### `cloneVNode` (package: `inferno`)
+```js
+Inferno.<span class="apidocCodeKeywordSpan">cloneVNode</span>(
+  vNode,
+  [props],
+  [...children]
+)
+```
+
+Clone and return a new Inferno `VNode` using a `VNode` as the starting point. The resulting `VNode` will have the original `VNode
+`&#x27;s props with the new props merged in shallowly. New children will replace existing children. key and ref from the original
+ `VNode` will be preserved.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inferno.createRenderer" id="apidoc.module.inferno.createRenderer">module inferno.createRenderer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.createRenderer.createRenderer" id="apidoc.element.inferno.createRenderer.createRenderer">
+        function <span class="apidocSignatureSpan">inferno.</span>createRenderer
+        <span class="apidocSignatureSpan">(parentDom)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createRenderer(parentDom) {
+    return function renderer(lastInput, nextInput) {
+        if (!parentDom) {
+            parentDom = lastInput;
+        }
+        render(nextInput, parentDom);
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+import Inferno from &#x27;inferno&#x27;;
+import { scan, map } from &#x27;most&#x27;;
+
+...
+const model$ = scan(update, 0, actions$);
+const vNodes$ = map(view(actions$), model$);
+const renderer = Inferno.<span class="apidocCodeKeywordSpan">createRenderer</span>();
+const runApp = () =&#x3e; scan(renderer, container, vNodes$).drain();
+
+runApp();
+```
+
+### `createElement` (package: `inferno-create-element`)
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inferno.createVNode" id="apidoc.module.inferno.createVNode">module inferno.createVNode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.createVNode.createVNode" id="apidoc.element.inferno.createVNode.createVNode">
+        function <span class="apidocSignatureSpan">inferno.</span>createVNode
+        <span class="apidocSignatureSpan">(flags, type, className, children, props, key, ref, noNormalise)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createVNode(flags, type, className, children, props, key, ref, noNormalise) {
+    if (flags &#x26; 16 /* ComponentUnknown */) {
+        flags = inferno_shared_1.isStatefulComponent(type) ? 4 /* ComponentClass */ : 8 /* ComponentFunction */;
+    }
+    var vNode = new VNode(children === void 0 ? null : children, className === void 0 ? null : className, flags, key === void 0 ?
+null : key, props === void 0 ? null : props, ref === void 0 ? null : ref, type);
+    if (noNormalise !== true) {
+        normalization_1.normalize(vNode);
+    }
+    if (options_1.options.createVNode !== null) {
+        options_1.options.createVNode(vNode);
+    }
+    return vNode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+);
+```
+
+Functional components are first-class functions where their first argument is the `props` passed through from their parent.
+
+### `createVNode` (package: `inferno`)
+```js
+Inferno.<span class="apidocCodeKeywordSpan">createVNode</span>(
+flags,
+type,
+[props],
+[...children],
+[events],
+[key],
+[ref],
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inferno.findDOMNode" id="apidoc.module.inferno.findDOMNode">module inferno.findDOMNode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.findDOMNode.findDOMNode" id="apidoc.element.inferno.findDOMNode.findDOMNode">
+        function <span class="apidocSignatureSpan">inferno.</span>findDOMNode
+        <span class="apidocSignatureSpan">(ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function findDOMNode(ref) {
+    if (!options_1.options.findDOMNodeEnabled) {
+        if (process.env.NODE_ENV !== &#x27;production&#x27;) {
+            inferno_shared_1.throwError(&#x27;findDOMNode() has been disabled, use Inferno.options.findDOMNodeEnabled = true; enabled
+ findDOMNode(). Warning this can significantly impact performance!&#x27;);
+        }
+        inferno_shared_1.throwError();
+    }
+    var dom = ref &#x26;&#x26; ref.nodeType ? ref : null;
+    return exports.componentToDOMNodeMap.get(ref) || dom;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inferno.getFlagsForElementVnode" id="apidoc.module.inferno.getFlagsForElementVnode">module inferno.getFlagsForElementVnode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.getFlagsForElementVnode.getFlagsForElementVnode" id="apidoc.element.inferno.getFlagsForElementVnode.getFlagsForElementVnode">
+        function <span class="apidocSignatureSpan">inferno.</span>getFlagsForElementVnode
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getFlagsForElementVnode(type) {
+    if (type === &#x27;svg&#x27;) {
+        return 128 /* SvgElement */;
+    }
+    else if (type === &#x27;input&#x27;) {
+        return 512 /* InputElement */;
+    }
+    else if (type === &#x27;select&#x27;) {
+        return 2048 /* SelectElement */;
+    }
+    else if (type === &#x27;textarea&#x27;) {
+        return 1024 /* TextareaElement */;
+    }
+    else if (type === &#x27;media&#x27;) {
+        return 256 /* MediaElement */;
+    }
+    return 2 /* HtmlElement */;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inferno.internal_normalize" id="apidoc.module.inferno.internal_normalize">module inferno.internal_normalize</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.internal_normalize.internal_normalize" id="apidoc.element.inferno.internal_normalize.internal_normalize">
+        function <span class="apidocSignatureSpan">inferno.</span>internal_normalize
+        <span class="apidocSignatureSpan">(vNode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function normalize(vNode) {
+    var props = vNode.props;
+    var children = vNode.children;
+    // convert a wrongly created type back to element
+    // Primitive node doesn&#x27;t have defaultProps, only Component
+    if (vNode.flags &#x26; 28 /* Component */) {
+        // set default props
+        var type = vNode.type;
+        var defaultProps = type.defaultProps;
+        if (!inferno_shared_1.isNullOrUndef(defaultProps)) {
+            if (!props) {
+                props = vNode.props = defaultProps; // Create new object if only defaultProps given
+            }
+            else {
+                for (var prop in defaultProps) {
+                    if (inferno_shared_1.isUndefined(props[prop])) {
+                        props[prop] = defaultProps[prop];
+                    }
+                }
+            }
+        }
+        if (inferno_shared_1.isString(type)) {
+            vNode.flags = getFlagsForElementVnode(type);
+            if (props &#x26;&#x26; props.children) {
+                vNode.children = props.children;
+                children = props.children;
+            }
+        }
+    }
+    if (props) {
+        normalizeProps(vNode, props, children);
+        if (!inferno_shared_1.isInvalid(props.children)) {
+            props.children = normalizeChildren(props.children);
+        }
+    }
+    if (!inferno_shared_1.isInvalid(children)) {
+        vNode.children = normalizeChildren(children);
+    }
+    if (process.env.NODE_ENV !== &#x27;production&#x27;) {
+        // This code will be stripped out from production CODE
+        // It helps users to track errors in their applications.
+        var verifyKeys = function (vNodes) {
+            var keyValues = vNodes.map(function (vnode) {
+                return vnode.key;
+            });
+            keyValues.some(function (item, idx) {
+                var hasDuplicate = keyValues.indexOf(item) !== idx;
+                if (hasDuplicate) {
+                    inferno_shared_1.warning(&#x27;Inferno normalisation(...): Encountered two children with same key, all keys must
+be unique within its siblings. Duplicated key is:&#x27; + item);
+                }
+                return hasDuplicate;
+            });
+        };
+        if (vNode.children &#x26;&#x26; Array.isArray(vNode.children)) {
+            verifyKeys(vNode.children);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inferno.internal_patch" id="apidoc.module.inferno.internal_patch">module inferno.internal_patch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.internal_patch.internal_patch" id="apidoc.element.inferno.internal_patch.internal_patch">
+        function <span class="apidocSignatureSpan">inferno.</span>internal_patch
+        <span class="apidocSignatureSpan">(lastVNode, nextVNode, parentDom, lifecycle, context, isSVG, isRecycling)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function patch(lastVNode, nextVNode, parentDom, lifecycle, context, isSVG, isRecycling) {
+    if (lastVNode !== nextVNode) {
+        var lastFlags = lastVNode.flags;
+        var nextFlags = nextVNode.flags;
+        if (nextFlags &#x26; 28 /* Component */) {
+            if (lastFlags &#x26; 28 /* Component */) {
+                patchComponent(lastVNode, nextVNode, parentDom, lifecycle, context, isSVG, nextFlags &#x26; 4 /* ComponentClass */, isRecycling
+);
+            }
+            else {
+                utils_1.replaceVNode(parentDom, mounting_1.mountComponent(nextVNode, null, lifecycle, context, isSVG, nextFlags &#x26;
+4 /* ComponentClass */), lastVNode, lifecycle, isRecycling);
+            }
+        }
+        else if (nextFlags &#x26; 3970 /* Element */) {
+            if (lastFlags &#x26; 3970 /* Element */) {
+                patchElement(lastVNode, nextVNode, parentDom, lifecycle, context, isSVG, isRecycling);
+            }
+            else {
+                utils_1.replaceVNode(parentDom, mounting_1.mountElement(nextVNode, null, lifecycle, context, isSVG), lastVNode,
+lifecycle, isRecycling);
+            }
+        }
+        else if (nextFlags &#x26; 1 /* Text */) {
+            if (lastFlags &#x26; 1 /* Text */) {
+                patchText(lastVNode, nextVNode);
+            }
+            else {
+                utils_1.replaceVNode(parentDom, mounting_1.mountText(nextVNode, null), lastVNode, lifecycle, isRecycling);
+            }
+        }
+        else if (nextFlags &#x26; 4096 /* Void */) {
+            if (lastFlags &#x26; 4096 /* Void */) {
+                patchVoid(lastVNode, nextVNode);
+            }
+            else {
+                utils_1.replaceVNode(parentDom, mounting_1.mountVoid(nextVNode, null), lastVNode, lifecycle, isRecycling);
+            }
+        }
+        else {
+            // Error case: mount new one replacing old one
+            utils_1.replaceLastChildAndUnmount(lastVNode, nextVNode, parentDom, lifecycle, context, isSVG, isRecycling);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inferno.linkEvent" id="apidoc.module.inferno.linkEvent">module inferno.linkEvent</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.linkEvent.linkEvent" id="apidoc.element.inferno.linkEvent.linkEvent">
+        function <span class="apidocSignatureSpan">inferno.</span>linkEvent
+        <span class="apidocSignatureSpan">(data, event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function linkEvent(data, event) {
+    return { data: data, event: event };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inferno.render" id="apidoc.module.inferno.render">module inferno.render</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inferno.render.render" id="apidoc.element.inferno.render.render">
+        function <span class="apidocSignatureSpan">inferno.</span>render
+        <span class="apidocSignatureSpan">(input, parentDom)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function render(input, parentDom) {
+    if (documentBody === parentDom) {
+        if (process.env.NODE_ENV !== &#x27;production&#x27;) {
+            inferno_shared_1.throwError(&#x27;you cannot render() to the &#x22;document.body&#x22;. Use an empty element as a container instead
+.&#x27;);
+        }
+        inferno_shared_1.throwError();
+    }
+    if (input === inferno_shared_1.NO_OP) {
+        return;
+    }
+    var root = getRoot(parentDom);
+    if (inferno_shared_1.isNull(root)) {
+        var lifecycle = new inferno_shared_1.Lifecycle();
+        if (!inferno_shared_1.isInvalid(input)) {
+            if (input.dom) {
+                input = VNodes_1.directClone(input);
+            }
+            if (!hydration_1.hydrateRoot(input, parentDom, lifecycle)) {
+                mounting_1.mount(input, parentDom, lifecycle, utils_1.EMPTY_OBJ, false);
+            }
+            root = setRoot(parentDom, input, lifecycle);
+            lifecycle.trigger();
+        }
+    }
+    else {
+        var lifecycle = root.lifecycle;
+        lifecycle.listeners = [];
+        if (inferno_shared_1.isNullOrUndef(input)) {
+            unmounting_1.unmount(root.input, parentDom, lifecycle, false, false);
+            removeRoot(root);
+        }
+        else {
+            if (input.dom) {
+                input = VNodes_1.directClone(input);
+            }
+            patching_1.patch(root.input, input, parentDom, lifecycle, utils_1.EMPTY_OBJ, false, false);
+        }
+        root.input = input;
+        lifecycle.trigger();
+    }
+    if (root) {
+        var rootInput = root.input;
+        if (rootInput &#x26;&#x26; (rootInput.flags &#x26; 28 /* Component */)) {
+            return rootInput.children;
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+In these examples, JSX is used via the [Inferno JSX Babel Plugin](https://github.com/infernojs/babel-plugin-inferno) to provide
+a simple way to express Inferno virtual DOM. You do not need to use JSX, it&#x27;s completely **optional**, you can use [hyperscript
+](https://github.com/infernojs/inferno/tree/master/packages/inferno-hyperscript) or [createElement](https://github.com/infernojs
+/inferno/tree/master/packages/inferno-create-element) (like React does).
+
+```jsx
+import Inferno from &#x27;inferno&#x27;;
+
+const message = &#x22;Hello world&#x22;;
+
+Inferno.<span class="apidocCodeKeywordSpan">render</span>(
+  &#x3c;MyComponent message={ message } /&#x3e;,
+  document.getElementById(&#x22;app&#x22;)
+);
+```
+Furthermore, Inferno also uses ES6 components like React:
+
+```jsx
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
