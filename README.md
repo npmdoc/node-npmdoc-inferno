@@ -1,4 +1,7 @@
-# api documentation for  [inferno (v3.0.4)](https://github.com/infernojs/inferno#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-inferno.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-inferno) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-inferno.svg)](https://travis-ci.org/npmdoc/node-npmdoc-inferno)
+# npmdoc-inferno
+
+#### basic api documentation for  [inferno (v3.0.5)](https://github.com/infernojs/inferno#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-inferno.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-inferno) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-inferno.svg)](https://travis-ci.org/npmdoc/node-npmdoc-inferno)
+
 #### An extremely fast, React-like JavaScript library for building modern user interfaces
 
 [![NPM](https://nodei.co/npm/inferno.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/inferno)
@@ -32,8 +35,8 @@
     "devDependencies": {},
     "directories": {},
     "dist": {
-        "shasum": "cac5495e6c145bfda071d5554b123c37c2033994",
-        "tarball": "https://registry.npmjs.org/inferno/-/inferno-3.0.4.tgz"
+        "shasum": "e827b8db339e5e91bae25a14a1537ebd1f7b89df",
+        "tarball": "https://registry.npmjs.org/inferno/-/inferno-3.0.5.tgz"
     },
     "homepage": "https://github.com/infernojs/inferno#readme",
     "inferno:main": "dist-es/index.js",
@@ -88,7 +91,8 @@
     },
     "scripts": {},
     "typings": "dist/index.d.ts",
-    "version": "3.0.4"
+    "version": "3.0.5",
+    "bin": {}
 }
 ```
 
